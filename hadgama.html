@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מערכת קביעת תורים חכמה — הדגמה חיה</title>
+<meta name="description" content="הדגמה חיה של מערכת קביעת תורים לעסק — אתר, טלפון ואפליקציית ניהול. נסו בעצמכם.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0e1a2b; --navy2:#132335; --navy3:#1c3049;
+    --gold:#e0b04d; --gold2:#f2c766; --gold3:#c8953a;
+    --ink:#eaf0f7; --muted:#a9b7c8; --line:rgba(224,176,77,.28);
+    --card:#142438;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;overflow-x:hidden}
+  body{overflow-x:hidden;
+    font-family:'Heebo',system-ui,Arial,sans-serif;
+    background:radial-gradient(1200px 600px at 50% -10%,#17293f 0%,var(--navy) 55%);
+    color:var(--ink); line-height:1.6; padding-bottom:90px;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:0 18px}
+  /* header */
+  header{text-align:center;padding:34px 18px 8px}
+  .brand{display:inline-flex;align-items:center;gap:10px;justify-content:center;margin-bottom:22px}
+  .logo{width:44px;height:44px;border-radius:11px;background:linear-gradient(145deg,var(--navy3),var(--navy2));
+    display:grid;place-items:center;border:1px solid var(--line)}
+  .logo svg{width:26px;height:26px}
+  .brand b{font-size:19px;font-weight:800;letter-spacing:.5px}
+  .brand span{display:block;font-size:10.5px;color:var(--gold2);letter-spacing:3px;font-weight:500}
+  .kicker{display:inline-block;font-size:12px;letter-spacing:4px;color:var(--gold2);font-weight:700;
+    border:1px solid var(--line);border-radius:999px;padding:6px 16px;margin-bottom:16px}
+  h1{font-size:clamp(27px,6.5vw,38px);font-weight:900;line-height:1.15;letter-spacing:-.5px}
+  h1 em{font-style:normal;color:var(--gold2)}
+  .sub{color:var(--muted);font-size:16px;margin-top:12px;max-width:520px;margin-inline:auto}
+  /* live badge */
+  .live{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:13px;color:#bfe9c6;
+    background:rgba(52,168,83,.12);border:1px solid rgba(52,168,83,.35);border-radius:999px;padding:6px 14px;font-weight:600}
+  .dot{width:9px;height:9px;border-radius:50%;background:#38d16b;box-shadow:0 0 0 0 rgba(56,209,107,.7);animation:p 1.8s infinite}
+  @keyframes p{0%{box-shadow:0 0 0 0 rgba(56,209,107,.6)}70%{box-shadow:0 0 0 9px rgba(56,209,107,0)}100%{box-shadow:0 0 0 0 rgba(56,209,107,0)}}
+  /* section */
+  .sec-title{text-align:center;font-size:14px;letter-spacing:3px;color:var(--gold2);font-weight:700;margin:38px 0 4px}
+  .sec-hint{text-align:center;color:var(--muted);font-size:14px;margin-bottom:18px}
+  /* action cards */
+  .card{display:flex;align-items:center;gap:16px;background:linear-gradient(180deg,var(--card),#0f1d2e);
+    border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-bottom:13px;
+    text-decoration:none;color:var(--ink);transition:.18s;position:relative}
+  a.card:hover{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+  .ic{flex:0 0 52px;height:52px;border-radius:13px;display:grid;place-items:center;font-size:25px;
+    background:linear-gradient(145deg,var(--navy3),var(--navy2));border:1px solid var(--line)}
+  .ct{flex:1;min-width:0}
+  .ct b{display:block;font-size:17px;font-weight:800}
+  .ct small{display:block;color:var(--muted);font-size:13.5px;font-weight:400;margin-top:2px}
+  .pw{display:inline-block;background:var(--gold);color:var(--navy);font-weight:800;font-size:12.5px;
+    border-radius:7px;padding:2px 9px;margin-top:6px;letter-spacing:1px}
+  .arw{flex:0 0 auto;color:var(--gold2);font-size:22px;font-weight:800}
+  .tel-num{color:var(--gold2);font-weight:800;font-size:18px;direction:ltr;display:inline-block}
+  /* ad showcase */
+  .shot{border-radius:16px;overflow:hidden;border:1px solid var(--line);margin:14px 0;
+    box-shadow:0 12px 34px rgba(0,0,0,.4)}
+  .shot img{width:100%;display:block}
+  .cap{text-align:center;color:var(--muted);font-size:13px;margin-top:-4px;margin-bottom:8px}
+  /* price */
+  .price{background:linear-gradient(145deg,#1a2e46,#0f1d2e);border:1px solid var(--gold);border-radius:20px;
+    text-align:center;padding:26px 20px;margin:34px 0 10px;position:relative;overflow:hidden}
+  .price::before{content:"";position:absolute;inset:0;background:radial-gradient(400px 140px at 50% 0,rgba(224,176,77,.16),transparent)}
+  .price .tag{position:relative;font-size:12.5px;letter-spacing:3px;color:var(--gold2);font-weight:700}
+  .price .num{position:relative;font-size:clamp(44px,12vw,64px);font-weight:900;color:#fff;line-height:1;margin:8px 0 2px}
+  .price .num small{font-size:26px;font-weight:700;color:var(--gold2)}
+  .price .old{position:relative;color:var(--muted);font-size:17px}
+  .price .old s{color:#8593a6}
+  .price .note{position:relative;color:var(--muted);font-size:13px;margin-top:10px}
+  /* feature strip */
+  .feats{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0 6px}
+  .feat{font-size:12.5px;color:var(--ink);background:var(--navy2);border:1px solid var(--line);
+    border-radius:999px;padding:6px 13px}
+  .feat b{color:var(--gold2)}
+  /* footer CTA */
+  .foot{text-align:center;margin:30px 0 10px}
+  .foot h3{font-size:22px;font-weight:800}
+  .foot p{color:var(--muted);font-size:14px;margin-top:4px}
+  .callbtn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(145deg,var(--gold2),var(--gold3));
+    color:var(--navy);font-weight:900;font-size:19px;text-decoration:none;border-radius:14px;
+    padding:15px 30px;margin-top:16px;direction:ltr;box-shadow:0 10px 26px rgba(224,176,77,.28)}
+  .credit{text-align:center;color:var(--muted);font-size:12px;margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,.06)}
+  /* sticky mobile call bar */
+  .bar{position:fixed;bottom:0;left:0;right:0;background:rgba(14,26,43,.94);backdrop-filter:blur(8px);
+    border-top:1px solid var(--line);padding:11px 14px;display:flex;gap:10px;z-index:50}
+  .bar a{flex:1;text-align:center;text-decoration:none;font-weight:800;border-radius:11px;padding:12px;font-size:15px}
+  .bar .b1{background:var(--gold);color:var(--navy);direction:ltr}
+  .bar .b2{background:var(--navy3);color:var(--ink);border:1px solid var(--line)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <span class="logo"><svg viewBox="0 0 32 32" fill="none"><path d="M16 4l10 6v12l-10 6-10-6V10z" stroke="#e0b04d" stroke-width="1.6"/><circle cx="16" cy="16" r="3" fill="#f2c766"/><path d="M16 13V7M16 19v6M13.4 14.5L8 11M18.6 14.5L24 11M13.4 17.5L8 21M18.6 17.5L24 21" stroke="#e0b04d" stroke-width="1.3"/></svg></span>
+    <span><b>מ.י.מ מערכות</b><span>פיתוח מערכות טכנולוגיה חכמות</span></span>
+  </div>
+  <div class="kicker">✦ הדגמה חיה ✦</div>
+  <h1>מערכת קביעת תורים חכמה <em>לעסק שלך</em></h1>
+  <p class="sub">זו לא הדמיה — זו מערכת אמיתית ופעילה של מספרה. לחצו על הכפתורים ותתנסו בעצמכם, בדיוק כמו שזה יעבוד אצלכם.</p>
+  <div class="live"><span class="dot"></span> המערכת פעילה עכשיו · נסו לקבוע תור אמיתי</div>
+</header>
+
+<main class="wrap">
+
+  <div class="sec-title">התנסו במערכת</div>
+  <p class="sec-hint">מספרות · קוסמטיקאיות · פאות · קליניקות · כל עסק עם תורים</p>
+
+  <a class="card" href="https://mispara-david.github.io/" target="_blank" rel="noopener">
+    <span class="ic">🗓️</span>
+    <span class="ct"><b>אתר קביעת תורים ללקוחות</b><small>בחרו יום ← שעה ← שם וטלפון. נסו לקבוע תור אמיתי!</small></span>
+    <span class="arw">‹</span>
+  </a>
+
+  <a class="card" href="https://mispara-david.github.io/admin.html" target="_blank" rel="noopener">
+    <span class="ic">🔧</span>
+    <span class="ct"><b>פאנל ניהול לבעל העסק</b><small>צפייה בתורים, ביטול, סגירת ימים ושעות, הגדרות ועיצוב.</small>
+      <span class="pw">סיסמה להתנסות: 1234</span></span>
+    <span class="arw">‹</span>
+  </a>
+
+  <a class="card" href="tel:0772249224">
+    <span class="ic">☎️</span>
+    <span class="ct"><b>קביעת תור טלפונית — חייגו ותתנסו</b><small>המערכת עונה לבד, מקריאה שעות פנויות וקובעת בשיחה. מושלם לטלפון כשר / בלי אינטרנט.</small>
+      <span class="tel-num">077-224-9224</span></span>
+    <span class="arw">‹</span>
+  </a>
+
+  <div class="card" style="cursor:default">
+    <span class="ic">📱</span>
+    <span class="ct"><b>אפליקציית ניהול לנייד</b><small>פאנל הניהול מותקן כאפליקציה על הטלפון — אנדרואיד (APK) או אייפון ("הוסף למסך הבית"). כל התורים בכיס, בלי להיכנס כל פעם.</small></span>
+  </div>
+
+  <div class="sec-title">גם מודעת פרסום לעסק שלך</div>
+  <p class="sec-hint">כחלק מההקמה — מעצבים לך מודעה מקצועית עם QR לקביעת תור</p>
+  <div class="shot"><img src="hadgama-mispara.jpg" alt="מודעת פרסום לדוגמה — מספרת דוד" loading="lazy"></div>
+
+  <div class="shot"><img src="hadgama-system.jpg" alt="סקירת המערכת — אתר, טלפון ואפליקציית ניהול" loading="lazy"></div>
+  <p class="cap">אתר · טלפון · אפליקציית ניהול — הכל מסונכרן אוטומטית</p>
+
+  <div class="price">
+    <div class="tag">מחיר השקה לקראת החגים</div>
+    <div class="num">999<small> ₪</small></div>
+    <div class="old">במקום <s>2,500 ₪</s> — הקמה מלאה + התאמה אישית</div>
+    <div class="note">השם שלך · השעות שלך · העיצוב שלך · האתר, הטלפון והאפליקציה</div>
+  </div>
+
+  <div class="feats">
+    <span class="feat">✓ <b>בלי</b> תשלום חודשי</span>
+    <span class="feat">✓ מתאים ל<b>טלפון כשר</b></span>
+    <span class="feat">✓ הלקוחות קובעים <b>24 שעות</b></span>
+    <span class="feat">✓ הכל <b>מסונכרן</b></span>
+  </div>
+
+  <div class="foot">
+    <h3>רוצים מערכת כזו לעסק שלכם?</h3>
+    <p>השאירו פרטים או חייגו — נקים לכם תוך ימים ספורים.</p>
+    <a class="callbtn" href="tel:0548427249">📞 054-8427249</a>
+  </div>
+
+  <div class="credit">מ.י.מ מערכות · פיתוח מערכות טכנולוגיה חכמות · כל הזכויות שמורות</div>
+
+</main>
+
+<div class="bar">
+  <a class="b1" href="tel:0548427249">📞 חייגו: 054-8427249</a>
+  <a class="b2" href="https://mispara-david.github.io/" target="_blank" rel="noopener">🗓️ לאתר ההדגמה</a>
+</div>
+
+</body>
+</html>
