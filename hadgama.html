@@ -91,9 +91,10 @@
   .credit{text-align:center;color:var(--muted);font-size:13px;margin:30px 0 6px;padding-top:20px;border-top:1px solid var(--line)}
 
   /* sticky call bar */
-  .bar{position:fixed;bottom:0;left:0;right:0;background:var(--cream2);border-top:1px solid var(--line);
-    padding:10px 14px;display:flex;gap:10px;z-index:50;box-shadow:0 -6px 20px rgba(0,0,0,.06)}
-  .bar a{flex:1;text-align:center;text-decoration:none;font-weight:800;border-radius:12px;padding:13px;font-size:15px}
+  .bar{position:fixed;bottom:0;left:0;right:0;height:64px;background:var(--cream2);border-top:1px solid var(--line);
+    padding:0 14px;display:flex;align-items:center;justify-content:center;gap:10px;z-index:50;box-shadow:0 -6px 20px rgba(0,0,0,.06)}
+  .bar a{flex:1;max-width:370px;height:46px;display:flex;align-items:center;justify-content:center;gap:8px;
+    text-decoration:none;font-weight:800;border-radius:12px;font-size:15px;line-height:1}
   .bar .b1{background:var(--teal);color:#fff;direction:ltr}
   .bar .b2{background:#fff;color:var(--teal-d);border:1.5px solid var(--teal-line)}
 </style>
