@@ -243,7 +243,8 @@
     loadAdminDays();
   });
 
-  el('savePwBtn').addEventListener('click', async () => {
+  const _savePwBtn = el('savePwBtn');   // מושבת בהדגמה — קיים רק אם הכפתור נמצא ב-HTML
+  if (_savePwBtn) _savePwBtn.addEventListener('click', async () => {
     const npw = el('newPw').value.trim();
     if (npw.length < 3) return showMsg(el('settingsMsg'), 'סיסמה קצרה מדי (לפחות 3 תווים)', 'err');
     await Store.saveSettings({ adminPassword: npw });
