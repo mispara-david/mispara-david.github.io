@@ -104,7 +104,8 @@
   .sentmsg{background:var(--teal-soft);color:var(--teal-d);border:1.5px solid var(--teal-line);border-radius:14px;
     padding:16px;font-weight:800;font-size:18px;margin-bottom:14px;text-align:center}
   .ormail{color:var(--muted);font-size:14px;font-weight:600;margin-top:12px}
-  .ormail a{color:var(--teal-d);font-weight:800}
+  .copymail{background:none;border:none;padding:0;font:inherit;color:var(--teal-d);font-weight:800;text-decoration:underline;cursor:pointer}
+  .copied{color:var(--teal);font-weight:800;margin-inline-start:6px}
   .final{text-align:center;margin:26px 0 6px}
   .final h3{font-family:'Suez One';font-size:clamp(26px,6vw,36px)}
   .final p{color:var(--muted);font-size:17px;font-weight:600;margin-top:6px}
@@ -197,7 +198,7 @@
       <textarea class="fi" name="message" placeholder="הודעה (לא חובה)" rows="2"></textarea>
       <button type="submit" class="callbtn" style="width:100%;justify-content:center">✉️ שליחת הפרטים</button>
     </form>
-    <p class="ormail">מעדיפים מייל ישיר? <a href="mailto:avi8442552@gmail.com">avi8442552@gmail.com</a></p>
+    <p class="ormail">מעדיפים מייל ישיר? <button type="button" class="copymail" data-mail="avi8442552@gmail.com">avi8442552@gmail.com</button><span class="copied" hidden>✓ הועתק</span></p>
   </div>
 
   <div class="credit">מ.י.מ מערכות · פיתוח מערכות טכנולוגיה חכמות · כל הזכויות שמורות</div>
@@ -217,6 +218,16 @@
     d.textContent='✅ תודה! הפנייה נשלחה — נחזור אליכם בהקדם.';
     var fin=document.getElementById('lead'); if(fin) fin.insertBefore(d, fin.firstChild.nextSibling);
   }
+  document.querySelectorAll('.copymail').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var mail=btn.getAttribute('data-mail');
+      function done(){var s=btn.parentNode.querySelector('.copied'); if(s){s.hidden=false; setTimeout(function(){s.hidden=true;},1800);}}
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(mail).then(done).catch(function(){fallback();});
+      } else { fallback(); }
+      function fallback(){var t=document.createElement('textarea');t.value=mail;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');}catch(e){}t.remove();done();}
+    });
+  });
 </script>
 </body>
 </html>
