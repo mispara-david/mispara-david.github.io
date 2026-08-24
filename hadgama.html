@@ -68,10 +68,19 @@
   .shot:nth-of-type(2){transform:rotate(1.2deg)}
   .shot img{width:100%;display:block}
   .cap{text-align:center;color:var(--muted);font-size:15px;font-weight:600;margin:10px 0 4px}
+  .viewad{display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;
+    background:var(--cream2);color:var(--teal-d);border:2px solid var(--teal-line);border-radius:16px;
+    padding:18px 22px;font-size:clamp(18px,4.4vw,22px);font-weight:800;transition:.16s}
+  .viewad:hover{border-color:var(--teal);background:var(--teal-soft);transform:translateY(-2px)}
+  .viewad{display:flex;align-items:center;justify-content:center;gap:12px;background:var(--cream2);
+    border:2px solid var(--teal);color:var(--teal-d);font-weight:800;font-size:clamp(18px,4.4vw,22px);
+    text-decoration:none;border-radius:16px;padding:20px 24px;margin:8px 0 4px;transition:.16s}
+  .viewad:hover{background:var(--teal);color:#fff}
+  .viewad .a{font-family:'Suez One';font-size:26px}
 
   /* price seal band */
   .priceband{position:relative;background:var(--teal);color:#fff;border-radius:24px;padding:36px 30px;margin:40px 0 8px;overflow:hidden;text-align:right}
-  .priceband .t{font-family:'Suez One';font-size:clamp(26px,6vw,36px);line-height:1.05}
+  .priceband .t{font-family:'Suez One';font-size:clamp(24px,5.6vw,36px);line-height:1.05;max-width:64%}
   .priceband .d{font-size:18px;font-weight:600;opacity:.95;margin-top:10px;max-width:60%}
   .seal{position:absolute;top:50%;left:26px;transform:translateY(-50%) rotate(-9deg);width:150px;height:150px;
     background:var(--coral);border-radius:50%;border:4px dashed rgba(255,255,255,.6);display:grid;place-items:center;text-align:center;
@@ -147,10 +156,8 @@
   </div>
 
   <div class="sec">גם מודעת פרסום <span class="c">לעסק שלך</span></div>
-  <div class="sechint">כחלק מההקמה — מעצבים לך מודעה מקצועית עם QR לקביעת תור</div>
-  <div class="shot"><img src="hadgama-mispara.jpg" alt="מודעת פרסום לדוגמה — מספרת דוד" loading="lazy"></div>
-  <div class="shot"><img src="hadgama-system.jpg" alt="סקירת המערכת — אתר, טלפון ואפליקציית ניהול" loading="lazy"></div>
-  <div class="cap">אתר · טלפון · אפליקציית ניהול — הכל מסונכרן אוטומטית</div>
+  <div class="sechint">כחלק מההקמה — מעצבים לך מודעה מקצועית עם QR לקביעת תור, מוכנה לתלייה בעסק</div>
+  <a class="viewad" href="hadgama-mispara.jpg" target="_blank" rel="noopener">🖼️ לצפייה בדוגמת מודעה לתלייה בעסק ←</a>
 
   <div class="priceband">
     <div class="t">הכל כלול —<br>במחיר השקה לחגים</div>
