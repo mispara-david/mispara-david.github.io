@@ -41,6 +41,13 @@
   h1 .c{color:var(--coral)}
   .lead{font-size:clamp(18px,4.4vw,23px);font-weight:600;color:var(--ink);margin-top:14px;max-width:620px;position:relative;z-index:2}
   .lead b{color:var(--teal-d)}
+  .audtop{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;position:relative;z-index:2}
+  .audtop span{font-size:clamp(14px,3.6vw,17px);font-weight:800;color:#fff;border-radius:999px;padding:6px 16px}
+  .audtop span:nth-child(1){background:var(--coral)}
+  .audtop span:nth-child(2){background:var(--teal)}
+  .audtop span:nth-child(3){background:var(--yellow-d,#F0A500)}
+  .audtop span:nth-child(4){background:#8B6DD6}
+  .audtop span:nth-child(5){background:var(--teal-d);font-weight:700}
   .livebadge{display:inline-flex;align-items:center;gap:9px;margin-top:14px;font-size:15px;font-weight:800;color:var(--teal-d);
     background:var(--teal-soft);border-radius:18px;padding:8px 16px;position:relative;z-index:2;max-width:100%;flex-wrap:wrap}
   .dot{width:9px;height:9px;border-radius:50%;background:var(--teal);animation:p 1.7s infinite}
@@ -137,6 +144,7 @@
     <div class="eyebrow">במקום לענות לטלפונים כל היום —</div>
     <h1>הלקוחות קובעים תור <span class="c">לבד.</span></h1>
     <p class="lead">והזמן שהתפנה חוזר אליכם, להתרכז בעסק עצמו. <b>המערכת עונה, מציגה שעות פנויות וקובעת — 24 שעות ביממה.</b></p>
+    <div class="audtop"><span>מספרות</span><span>קוסמטיקאיות</span><span>פאניות</span><span>קליניקות</span><span>וכל עסק עם תורים</span></div>
     <span class="livebadge"><span class="dot"></span> מערכת אמיתית ופעילה של מספרה — לחצו ונסו לקבוע תור</span>
   </div>
 </header>
@@ -144,7 +152,7 @@
 <main class="wrap">
 
   <div class="sec">כל הערוצים <span class="c">במקום אחד</span></div>
-  <div class="sechint">מספרות · קוסמטיקאיות · פאות · קליניקות — כל עסק שמנהל תורים</div>
+  <div class="sechint">אתר · מענה טלפוני · אפליקציית ניהול — הכל מסונכרן אוטומטית</div>
 
   <a class="step" href="https://mispara-david.github.io/" target="_blank" rel="noopener">
     <span class="num">1</span>
@@ -192,12 +200,12 @@
       <input type="hidden" name="redirect" value="https://mispara-david.github.io/hadgama.html?sent=1#lead">
       <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
       <input class="fi" name="name" placeholder="השם שלך" required autocomplete="name">
-      <input class="fi" name="business" placeholder="סוג העסק — מספרה / קוסמטיקה / פאות / אחר">
+      <input class="fi" name="business" placeholder="סוג העסק — מספרה / קוסמטיקה / פאניות / אחר">
       <input class="fi" name="phone" placeholder="טלפון לחזרה" inputmode="tel" autocomplete="tel">
       <textarea class="fi" name="message" placeholder="הודעה (לא חובה)" rows="2"></textarea>
       <button type="submit" class="callbtn" style="width:100%;justify-content:center">✉️ שליחת הפרטים</button>
     </form>
-    <p class="ormail">מעדיפים מייל ישיר? <a class="gmail" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=avi8442552@gmail.com&su=פנייה%20-%20מערכת%20קביעת%20תורים&body=שלום%2C%0Aראיתי%20את%20ההדגמה%20של%20מערכת%20קביעת%20התורים%20ואשמח%20לפרטים.%0A%0Aשם%3A%20%0Aסוג%20העסק%20%28מספרה%20%2F%20קוסמטיקה%20%2F%20פאות%20%2F%20אחר%29%3A%20%0Aטלפון%20לחזרה%3A%20%0A%0Aתודה%21">שליחת מייל ב-Gmail ←</a></p>
+    <p class="ormail">מעדיפים מייל ישיר? <a class="gmail" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&fs=1&to=avi8442552@gmail.com&su=פנייה%20-%20מערכת%20קביעת%20תורים&body=שלום%2C%0Aראיתי%20את%20ההדגמה%20של%20מערכת%20קביעת%20התורים%20ואשמח%20לפרטים.%0A%0Aשם%3A%20%0Aסוג%20העסק%20%28מספרה%20%2F%20קוסמטיקה%20%2F%20פאניות%20%2F%20אחר%29%3A%20%0Aטלפון%20לחזרה%3A%20%0A%0Aתודה%21">שליחת מייל ב-Gmail ←</a></p>
   </div>
 
   <div class="credit">מ.י.מ מערכות · פיתוח מערכות טכנולוגיה חכמות · כל הזכויות שמורות</div>
