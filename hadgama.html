@@ -26,7 +26,8 @@
   .b1{width:60vw;max-width:460px;height:60vw;max-height:460px;background:radial-gradient(circle at 30% 30%,#FFD9D0,#FFE9E3 70%);top:-120px;left:-120px;opacity:.65}
 
   header{position:relative;padding:20px 0 4px;overflow:hidden}
-  .brand{display:flex;align-items:center;gap:12px;position:relative;z-index:2}
+  header .wrap{text-align:center}
+  .brand{display:flex;align-items:center;justify-content:center;gap:12px;position:relative;z-index:2}
   .logo{width:50px;height:50px;border-radius:13px;background:var(--teal);display:grid;place-items:center;flex:0 0 auto}
   .logo svg{width:29px;height:29px}
   .lock{display:inline-flex;flex-direction:column;align-items:stretch}
@@ -39,11 +40,11 @@
   .eyebrow{font-size:clamp(17px,4vw,22px);font-weight:700;color:var(--teal-d);position:relative;z-index:2;margin-bottom:6px}
   h1{font-family:'Suez One';font-size:clamp(37px,9vw,72px);line-height:1;letter-spacing:-1px;position:relative;z-index:2;overflow-wrap:break-word}
   h1 .c{color:var(--coral)}
-  .lead{font-size:clamp(18px,4.4vw,23px);font-weight:600;color:var(--ink);margin-top:18px;max-width:640px;position:relative;z-index:2}
+  .lead{font-size:clamp(18px,4.4vw,23px);font-weight:600;color:var(--ink);margin-top:18px;max-width:640px;margin-inline:auto;position:relative;z-index:2}
   .lead b{color:var(--teal-d)}
   .lead2{margin-top:14px}
   .lead .hl{color:var(--coral-d);font-weight:800}
-  .audtop{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px;position:relative;z-index:2}
+  .audtop{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:22px;position:relative;z-index:2}
   .audtop span{font-size:clamp(14px,3.6vw,17px);font-weight:800;color:#fff;border-radius:999px;padding:6px 16px}
   .audtop span:nth-child(1){background:var(--coral)}
   .audtop span:nth-child(2){background:var(--teal)}
@@ -55,9 +56,9 @@
   .dot{width:9px;height:9px;border-radius:50%;background:var(--teal);animation:p 1.7s infinite}
   @keyframes p{0%{box-shadow:0 0 0 0 rgba(14,158,134,.5)}70%{box-shadow:0 0 0 8px rgba(14,158,134,0)}100%{box-shadow:0 0 0 0 rgba(14,158,134,0)}}
 
-  .sec{font-family:'Suez One';font-size:clamp(26px,6vw,38px);margin:46px 0 6px}
+  .sec{font-family:'Suez One';font-size:clamp(26px,6vw,38px);margin:46px 0 6px;text-align:center}
   .sec .c{color:var(--coral)}
-  .sechint{color:var(--muted);font-size:17px;font-weight:600;margin-bottom:22px}
+  .sechint{color:var(--muted);font-size:17px;font-weight:600;margin-bottom:22px;text-align:center}
 
   /* editorial numbered rows */
   .step{display:flex;align-items:center;gap:20px;background:var(--cream2);border:1px solid var(--line);
