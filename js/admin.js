@@ -236,7 +236,7 @@
       slotMinutes,
       startTime: starts[0],
       endTime: ends[ends.length - 1],
-      businessName: el('bizNameIn').value.trim() || 'דוד הספר',
+      businessName: el('bizNameIn').value.trim() || 'המספרה של שמשון',
       bookAheadDays: Math.max(1, Math.min(90, parseInt(el('bookAhead').value) || 21))
     });
     showMsg(el('settingsMsg'), '✅ ההגדרות נשמרו', 'ok');

@@ -1,7 +1,7 @@
 {
-  "name": "דוד הספר – ניהול",
-  "short_name": "ניהול דוד",
-  "description": "ניהול תורים למספרה של דוד",
+  "name": "המספרה של שמשון – ניהול",
+  "short_name": "ניהול שמשון",
+  "description": "ניהול תורים למספרה של שמשון",
   "start_url": "admin.html",
   "scope": "./",
   "display": "standalone",
